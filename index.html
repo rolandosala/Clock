@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> 
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <h4>Clock App</h4>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="clock-container">
+                <div class="main-clock clockSlide" id="normal">
+                    <h1 id="main-clock">00:00:00</h1>
+                </div>
+                <div class="countdown-clock clockSlide" id="countdown">
+                    <div class="setcount-container">
+                        <div class="box">
+                            <input type="number" id="hour" maxlength="2" value="" placeholder="00"/>
+                            <span>Hour</span>
+                        </div>
+                       <div class="box">
+                            <input type="number" id="minute" maxlength="2" value=""  placeholder="00"/>
+                            <span>Minute</span>
+                       </div>
+                        <div class="box">
+                            <input type="number" id="second" maxlength="2" value=""  placeholder="00" />
+                            <span>Second</span>
+                        </div>
+                        
+                    </div>
+                    <button id="start"  >Start</button>
+                    <button id="pause"  >Pause</button>
+                    <button id="reset"  >Reset</button>
+                </div>
+                <div class="stopwatch-clock clockSlide" id="stopwatch">
+                    <div class="stopwatch-container">
+                        <div class="stopwatch-box">
+                            <p id="minuteElement">00</p>
+                            <span>Minute</span>
+                        </div>
+                        <div class="stopwatch-box">
+                            <p id="stopwatch_second">00</p>
+                            <span>Second</span>
+                        </div>
+                        <div class="stopwatch-box">
+                            <p id="millisecond">00</p>
+                            <span>Millisecond</span>
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <button id="stopwatch-start"><i class="fas fa-play"></i>
+                        </button>
+                        <button id="stopwatch-stop" ><i class="fas fa-pause"></i></button>
+                        <button id="stopwatch-record"><i class="fas fa-list"></i></button>
+                        <button id="stopwatch-reset"><i class="fas fa-trash"></i></button>
+                    </div>
+                    <div class="list-container">
+                       <ul id="list-record">
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="alarm-clock clockSlide" id="alarmclock">
+                    <div class="hid-clock">
+                        <input type="text" id="alarmset" disabled>
+                    </div>
+                    <div class="alarm-container">
+                        <ul id="alarm-list">
+                           
+                        </ul>
+                    </div>
+                    <div class="alarm-add">
+                        <button class="btnAdd-alarm" id="btnAdd-alarm">+</button>
+                    </div>
+                    <div class="alarm-modal" id="alarm-modal">
+                        <div class="alarm-modal-container">
+                            <select name="alarmhour" id="alarmhour">
+                            </select>
+                            <select name="alarmminute" id="alarmminute"></select>
+                            <select name="alarmtype" id="alarmtype">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <div class="alarm-btn-container">
+                            <button id="btnCancel">Cancel</button>
+                            <button id="btnSet">Set</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="clockLinks active"  onclick="openClock(event, 'normal')">Normal</button>
+            <button class="clockLinks" onclick="openClock(event, 'countdown')">Timer</button>
+            <button class="clockLinks" onclick="openClock(event, 'stopwatch')">Stopwatch</button>
+            <button class="clockLinks" onclick="openClock(event, 'alarmclock')">Alarm</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
