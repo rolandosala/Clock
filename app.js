@@ -234,14 +234,14 @@ document.getElementById('btnSet').onclick = function(){
    deleteItem();
    setInterval(alarmClock, 1000);
 }
-
+let audio = new Audio();
 function alarmClock(){
 
    let TimeActive = document.getElementById('alarmset');
    console.log(alarmArray);
 
     if(alarmArray.includes(TimeActive.value)){
-        let audio = new Audio();
+        
         audio.src = "alarm.mp3";
         audio.play();
         document.getElementById('alarmset').style.color = 'red';
@@ -266,6 +266,7 @@ function deleteItem(){
             console.log(r); */
             if(alarmArray.indexOf(alarmArray[i]) == i){
                 delete alarmArray[i];
+                audio.pause();
                 console.log(alarmArray);
             }
             return false
